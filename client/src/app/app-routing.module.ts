@@ -1,18 +1,18 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {NotFoundComponent} from "./not-found/not-found.component";
-import {LoginPageComponent} from "./login-page/login-page.component";
-import {RegisterPageComponent} from "./register-page/register-page.component";
-import {JobListingPageComponent} from "./job-listing-page/job-listing-page.component";
-import {UserAddJobPageComponent} from "./user-add-job-page/user-add-job-page.component";
+import {NotFoundComponent} from './not-found/not-found.component';
+import {LoginPageComponent} from './login-page/login-page.component';
+import {RegisterPageComponent} from './register-page/register-page.component';
+import {JobListingPageComponent} from './job-listing-page/job-listing-page.component';
+import {UserAddJobPageComponent} from './user-add-job-page/user-add-job-page.component';
 import {JobDetailPageComponent} from './job-detail-page/job-detail-page.component';
-import {AuthGuard} from "./guards/auth.guard";
-import {UserMyJobsPageComponent} from "./user-my-jobs-page/user-my-jobs-page.component";
-import {UserJobInfoPageComponent} from "./user-job-info-page/user-job-info-page.component";
-import {UserProfilePageComponent} from "./user-profile-page/user-profile-page.component";
-import {UserEditJobPageComponent} from "./user-edit-job-page/user-edit-job-page.component";
-import {JobApplicationPageComponent} from "./job-application-page/job-application-page.component";
-import {UserJobAppsPageComponent} from "./user-job-apps-page/user-job-apps-page.component";
+import {AuthGuard} from './guards/auth.guard';
+import {UserMyJobsPageComponent} from './user-my-jobs-page/user-my-jobs-page.component';
+import {UserJobInfoPageComponent} from './user-job-info-page/user-job-info-page.component';
+import {UserProfilePageComponent} from './user-profile-page/user-profile-page.component';
+import {UserEditJobPageComponent} from './user-edit-job-page/user-edit-job-page.component';
+import {JobApplicationPageComponent} from './job-application-page/job-application-page.component';
+import {UserJobAppsPageComponent} from './user-job-apps-page/user-job-apps-page.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'jobs', pathMatch: 'full'},

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+// tslint:disable-next-line:quotemark
 import {UserJobsService} from "../services/user_jobs.service";
+// tslint:disable-next-line:quotemark
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -18,8 +20,11 @@ export class UserJobInfoPageComponent implements OnInit {
     this.jobId = route.snapshot.params.job_id;
     this.jobService.getJob(route.snapshot.params.job_id).subscribe(
       res => {
+        // tslint:disable-next-line:no-string-literal
         if (res['status'] === 'success') {
+          // tslint:disable-next-line:no-string-literal
           this.job = res['payload'];
+          // tslint:disable-next-line:no-string-literal
           this.job['can_publish'] = !!(this.job['description'] && this.job['requirement']);
         }
       }

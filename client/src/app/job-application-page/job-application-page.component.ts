@@ -52,7 +52,7 @@ export class JobApplicationPageComponent implements OnInit {
   ) {
     this.jobId = route.snapshot.params.job_id;
     this.jobService.getJobInfo(this.jobId).subscribe(r => {
-      this.job = r['payload'];
+      this.job = r[`payload`];
     });
     this.form = this.formBuilder.group({
       name: ['', Validators.required],

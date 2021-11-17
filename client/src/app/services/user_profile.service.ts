@@ -1,5 +1,7 @@
+// tslint:disable-next-line:quotemark
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
+// tslint:disable-next-line:quotemark
 import {environment as env} from "../../environments/environment";
 
 const API_URL = `${env.api.basepath}/api/u/profile`;

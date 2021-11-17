@@ -1,3 +1,4 @@
+// tslint:disable-next-line:quotemark
 import {Pipe, PipeTransform} from "@angular/core";
 
 const SALARY_RANGE = [
@@ -15,6 +16,7 @@ const SALARY_RANGE = [
 })
 export class SalaryRangePipe implements PipeTransform {
   transform(value: any, ...args: any[]): any {
+    // tslint:disable-next-line:radix
     return SALARY_RANGE[parseInt(value)];
   }
 

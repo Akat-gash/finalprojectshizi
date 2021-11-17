@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+// tslint:disable-next-line:quotemark
 import {UserJobsService} from "../services/user_jobs.service";
+// tslint:disable-next-line:quotemark
 import {JobsService} from "../services/jobs.service";
 import { faClock, faMapMarker } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,7 +18,9 @@ import { faClock, faMapMarker } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./job-listing-page.component.css']
 })
 export class JobListingPageComponent implements OnInit {
+  // tslint:disable-next-line:no-inferrable-types
   currentMode: number = 0;
+  // tslint:disable-next-line:ban-types
   jobs: Array<Object> = [];
   faClock = faClock;
   faMapMarker = faMapMarker;
@@ -31,6 +35,7 @@ export class JobListingPageComponent implements OnInit {
   loadLatestJobs() {
     this.currentMode = 0;
     this.jobService.getLatestJobs().subscribe(r => {
+      // tslint:disable-next-line:no-string-literal
       this.jobs = r['payload']['jobs'];
       console.log(r);
     });
@@ -39,6 +44,7 @@ export class JobListingPageComponent implements OnInit {
   loadVisaSponsorJobs() {
     this.currentMode = 1;
     this.jobService.getVisaSponsorJobs().subscribe(r => {
+      // tslint:disable-next-line:no-string-literal
       this.jobs = r['payload']['jobs'];
       console.log(r);
     });
@@ -47,6 +53,7 @@ export class JobListingPageComponent implements OnInit {
   loadRemoteJobs() {
     this.currentMode = 2;
     this.jobService.getRemoteJobs().subscribe(r => {
+      // tslint:disable-next-line:no-string-literal
       this.jobs = r['payload']['jobs'];
       console.log(r);
     });
@@ -55,6 +62,7 @@ export class JobListingPageComponent implements OnInit {
   loadHighSalariesJobs() {
     this.currentMode = 3;
     this.jobService.getHighSalariesJobs().subscribe(r => {
+      // tslint:disable-next-line:no-string-literal
       this.jobs = r['payload']['jobs'];
       console.log(r);
     });

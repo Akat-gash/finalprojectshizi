@@ -1,7 +1,7 @@
 require('dotenv').config();
 const userModel = require("../models/user.model");
 const { ObjectId } = require('mongoose').mongo.ObjectId;
-const { STATUS_SUCCESS, STATUS_ERROR } = require('../common/constants');
+const { STATUS_SUCCESS, STATUS_ERROR } = require('../common/constantValues');
 const bcrypt = require('bcrypt');
 const salt = parseInt(process.env.BCRYPT_SALT) || 10;
 

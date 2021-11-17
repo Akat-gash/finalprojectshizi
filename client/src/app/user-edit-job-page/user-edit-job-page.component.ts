@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+// tslint:disable-next-line:quotemark
 import {FormBuilder, FormGroup, ValidationErrors, Validators} from "@angular/forms";
+// tslint:disable-next-line:quotemark
 import {UserJobsService} from "../services/user_jobs.service";
+// tslint:disable-next-line:quotemark
 import {ActivatedRoute, Router} from "@angular/router";
+// tslint:disable-next-line:quotemark
 import {AngularEditorConfig} from "@kolkov/angular-editor";
 
 @Component({
@@ -10,6 +14,7 @@ import {AngularEditorConfig} from "@kolkov/angular-editor";
   styleUrls: ['./user-edit-job-page.component.css']
 })
 export class UserEditJobPageComponent implements OnInit {
+  // tslint:disable-next-line:ban-types
   job: Object = {};
   editForm: FormGroup;
   jobId: string = null;
@@ -27,10 +32,12 @@ export class UserEditJobPageComponent implements OnInit {
   submitted = false;
   error: string = null;
   errors;
+  // tslint:disable-next-line:one-line
   constructor(private formBuilder: FormBuilder, private jobService: UserJobsService, private route: ActivatedRoute, private router: Router){
     this.editForm = this.createFormGroup();
     this.jobId = this.route.snapshot.params.job_id;
     jobService.getJob(route.snapshot.params.job_id).subscribe(r => {
+      // tslint:disable-next-line:no-string-literal
       this.job = r['payload'];
       this.editForm.patchValue(this.job);
     });
@@ -90,12 +97,13 @@ export class UserEditJobPageComponent implements OnInit {
       description: this.f.description.value,
       requirement: this.f.requirement.value,
     }).subscribe(r => {
+      // tslint:disable-next-line:no-string-literal
       if (r['status'] === 'success') {
         this.router.navigate(['/u/jobs']);
       } else {
         this.error = JSON.stringify(r);
       }
-    })
+    });
   }
 
 }

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+// tslint:disable-next-line:quotemark
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+// tslint:disable-next-line:quotemark
 import {AuthService} from "../services/auth.service";
+// tslint:disable-next-line:quotemark
 import {first} from "rxjs/operators";
+// tslint:disable-next-line:quotemark
 import {Router} from "@angular/router";
 
 @Component({
@@ -12,6 +16,7 @@ import {Router} from "@angular/router";
 export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
   error: string = null;
+  // tslint:disable-next-line:no-inferrable-types
   submitted: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
@@ -33,6 +38,7 @@ export class LoginPageComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    // tslint:disable-next-line:curly
     if (this.loginForm.invalid) return;
 
     this.authService.login(this.loginForm.controls.email.value, this.loginForm.controls.password.value)
@@ -43,6 +49,7 @@ export class LoginPageComponent implements OnInit {
         }
       }, err => {
         this.error = err.statusText;
+      // tslint:disable-next-line:semicolon
       })
   }
 

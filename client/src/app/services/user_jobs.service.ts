@@ -1,6 +1,10 @@
+// tslint:disable-next-line:quotemark
 import {Injectable} from "@angular/core";
+// tslint:disable-next-line:quotemark
 import {HttpClient} from "@angular/common/http";
+// tslint:disable-next-line:quotemark
 import {Observable} from "rxjs";
+// tslint:disable-next-line:quotemark
 import {environment as env} from "../../environments/environment";
 
 const API_URL = `${env.api.basepath}/api/u/jobs`;
@@ -15,6 +19,7 @@ export class UserJobsService {
     return this.http.post(`${API_URL}`, { title, company, location, is_remote, visa_sponsor, job_type, salary_range } );
   }
 
+  // tslint:disable-next-line:ban-types
   listJobs() : Observable<Object> {
     return this.http.get(`${API_URL}`);
   }
@@ -23,7 +28,10 @@ export class UserJobsService {
     return this.http.get(`${API_URL}/${jobId}`);
   }
 
+  // tslint:disable-next-line:ban-types
+  // tslint:disable-next-line:max-line-length
   updateJob(jobId: string, {title, company, location, is_remote, visa_sponsor, job_type, salary_range, description, requirement }) : Observable<Object> {
+    // tslint:disable-next-line:max-line-length
     return this.http.patch(`${API_URL}/${jobId}`, {title, company, location, is_remote, visa_sponsor, job_type, salary_range, description, requirement });
   }
 

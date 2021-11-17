@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {JobsService} from "../services/jobs.service";
-import {faLandmark, faMapMarker, faHandPointRight, faMoneyBill, faFileContract, faFlagUsa, faGlobe} from "@fortawesome/free-solid-svg-icons";
+import {ActivatedRoute, Router} from '@angular/router';
+import {JobsService} from '../services/jobs.service';
+// tslint:disable-next-line:no-trailing-whitespace
+import {faLandmark, faMapMarker, faHandPointRight, faMoneyBill,
+  faFileContract, faFlagUsa, faGlobe} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-job-detail-page',
@@ -26,6 +28,7 @@ export class JobDetailPageComponent implements OnInit {
   constructor(private jobService: JobsService, private router: Router, private route: ActivatedRoute) {
     this.jobId = route.snapshot.params.job_id;
     this.jobService.getJobInfo(this.jobId).subscribe(r => {
+      // tslint:disable-next-line:no-string-literal
       this.job = r['payload'];
     });
   }

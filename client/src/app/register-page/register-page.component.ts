@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../services/auth.service";
-import {Router} from "@angular/router";
-import {first} from "rxjs/operators";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../services/auth.service';
+import {Router} from '@angular/router';
+import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-register-page',
@@ -11,7 +11,7 @@ import {first} from "rxjs/operators";
 })
 export class RegisterPageComponent implements OnInit {
   registerForm: FormGroup;
-  submitted: boolean = false;
+  submitted = false;
   error: string = null;
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     if (this.authService.currentUserValue) {
@@ -37,6 +37,7 @@ export class RegisterPageComponent implements OnInit {
       return;
     }
 
+    // tslint:disable-next-line:max-line-length
     this.authService.register(this.registerForm.controls.name.value, this.registerForm.controls.email.value, this.registerForm.controls.password.value)
       .pipe(first())
       .subscribe(result => {
@@ -48,7 +49,7 @@ export class RegisterPageComponent implements OnInit {
         }
       }, err => {
         this.error = err.statusText;
-      })
+      });
   }
 
 }

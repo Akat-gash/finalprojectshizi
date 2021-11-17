@@ -1,8 +1,8 @@
-import {Injectable} from "@angular/core";
-import {BehaviorSubject, Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {map} from "rxjs/operators";
-import {environment as env} from "../../environments/environment";
+import {Injectable} from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
+import {environment as env} from '../../environments/environment';
 
 const LOGIN_API = `${env.api.basepath}/auth/${env.api.routes['auth'].login}`;
 const REGISTER_API = `${env.api.basepath}/auth/${env.api.routes['auth'].register}`;

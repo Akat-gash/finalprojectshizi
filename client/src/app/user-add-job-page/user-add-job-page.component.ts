@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+// tslint:disable-next-line:quotemark
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+// tslint:disable-next-line:quotemark
 import {UserJobsService} from "../services/user_jobs.service";
+// tslint:disable-next-line:quotemark
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,6 +14,7 @@ import {Router} from "@angular/router";
 export class UserAddJobPageComponent implements OnInit {
   addForm: FormGroup;
   error: string = null;
+  // tslint:disable-next-line:no-inferrable-types
   submitted: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private jobService: UserJobsService, private router: Router) {
@@ -56,10 +60,11 @@ export class UserAddJobPageComponent implements OnInit {
     };
 
     this.jobService.addJob(data).subscribe(response => {
+      // tslint:disable-next-line:no-string-literal
       if (response['status'] === 'success') {
         this.router.navigate(['/u/jobs']);
       }
-    })
+    });
   }
 
 }

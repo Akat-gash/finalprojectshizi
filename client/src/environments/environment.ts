@@ -7,7 +7,7 @@ export const environment = {
   api: {
     basepath: `http://localhost:3000`,
     routes: {
-      'auth': {
+      auth: {
         login: 'login',
         register: 'register',
       },

@@ -1,5 +1,8 @@
+// tslint:disable-next-line:quotemark
 import {Injectable} from "@angular/core";
+// tslint:disable-next-line:quotemark
 import {HttpClient, HttpRequest} from "@angular/common/http";
+// tslint:disable-next-line:quotemark
 import {environment as env} from "../../environments/environment";
 
 const BASE_URL = `${env.api.basepath}/api/jobs`;
@@ -36,6 +39,7 @@ export class JobsService {
   }
 
   postJobApplication(jobId: string, {name, email, resume}) {
+    // tslint:disable-next-line:prefer-const
     let formData = new FormData();
     formData.append('name', name);
     formData.append('email', email);

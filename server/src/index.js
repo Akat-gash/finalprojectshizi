@@ -1,42 +1,37 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoose = require("./config/database");
+const mongoose = require("./config/databaseCon");
 const authRouter = require('./routes/auth.api');
 const userJobsRouter = require('./routes/user_jobs.api');
 const jobsRouter = require('./routes/jobs.api');
 const userProfileRouter = require('./routes/user_profile.api');
-const mwIsAuth = require('./middleware/is_authenticated.middleware');
-const { SECRET_KEY, STATUS_ERROR } = require('./common/constants');
+const mwIsAuth = require('./middleware/header_authentication');
+const { SECRET_KEY, STATUS_ERROR } = require('./common/constantValues');
 
-// Start database connection
-mongoose.connection.on('error', console.error.bind(console, 'Database connection error!!!'));
+// Start databaseCon connection
+mongoose.connection.on('error', console.error.bind(console, 'databaseCon connection error!!!'));
 const app = express();
 
-/////////////////////////////////////////
+dotenv.config();
+
 // CONFIG
 /////////////////////////////////////////
-app.set(SECRET_KEY, process.env.SECRET_KEY || 'MIUProJobsSecretKey');
+app.set(SECRET_KEY, process.env.SECRET_KEY || 'MWAsecureCode');
 
-/////////////////////////////////////////
-// MIDDLEWARE
-/////////////////////////////////////////
+////////////////////MIDDLEWARE/////////////////////
 app.use(require('cors')());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.use('/assets', express.static(process.env.PUBLIC_PATH));
-/////////////////////////////////////////
-// ROUTING
-/////////////////////////////////////////
+//////////////////ROUTING///////////////////////
 app.use('/auth', authRouter);
 app.use('/api/jobs', jobsRouter);
 app.use('/api/u/jobs', mwIsAuth, userJobsRouter);
 app.use('/api/u/profile', mwIsAuth, userProfileRouter);
 
-/////////////////////////////////////////
-// ERROR HANDLER
-/////////////////////////////////////////
+
+////////////////////ERROR HANDLER/////////////////////
 app.use((err, req, res, next) => {
     console.error(err);
     res.status(500).json({
@@ -47,8 +42,7 @@ app.use((err, req, res, next) => {
     });
 });
 
-/////////////////////////////////////////
-// START SERVER
-/////////////////////////////////////////
+
+//////////////////START SERVER///////////////////////
 app.listen(process.env.SERVER_PORT || 3000,
     () => console.log(`Server started at http://localhost:${process.env.SERVER_PORT || 3000}`));

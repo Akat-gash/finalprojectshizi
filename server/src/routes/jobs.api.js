@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const controllers = require('../controllers/jobs.controllers');
+const controllers = require('../controllers/jobs_controllers');
 
 router.get('/latest', controllers.getByLatest);
 router.get('/visa-sponsor', controllers.getByVisaSponsor);

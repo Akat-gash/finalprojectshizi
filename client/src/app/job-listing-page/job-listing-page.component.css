@@ -9,42 +9,41 @@ a {
 }
 .header {
   height: 400vh;
-  background-image:linear-gradient(rgb(159, 185, 206),rgba(233, 221, 221, 0)),url(ang.png);
-   background-size: cover;
-
-
+  background-image: linear-gradient(rgb(159, 185, 206), rgba(233, 221, 221, 0)),
+    url(picture.png);
+  background-size: cover;
 }
-.clk-search{
-  color:black;
-    margin-bottom: 18px;
-    font-size :30px;
-    letter-spacing: 2px;
-    text-align: center;
+.clk-search {
+  color: black;
+  margin-bottom: 18px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-align: center;
 }
-.btn{
+.btn {
   height: 60px;
   width: 200px;
-  background: #9cac10;
-  border:black;
-  color:#000;
-  border-radius: 25px;
+  background: #1b72e4;
+  border: black;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
 }
-.btn :hover{
+.btn :hover {
   background: #080a01;
-    cursor: pointer;
+  cursor: pointer;
 }
 /* .form-box{
   background: rgba(40, 128, 155, 0.479);
   padding: 50px;
   margin-bottom: 200px;
 } */
-.search-page{
+.search-page {
   background-color: rgba(194, 182, 173, 0.897);
   width: 815px;
   height: 8vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-decoration-style: double;
 }
-.group{
- background-color: rgba(174, 228, 25, 0.349);
+.group {
+  background-color: rgba(174, 228, 25, 0.349);
 }

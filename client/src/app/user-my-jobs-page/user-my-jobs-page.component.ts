@@ -8,14 +8,16 @@ import { faClock, faMapMarker } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./user-my-jobs-page.component.css']
 })
 export class UserMyJobsPageComponent implements OnInit {
+  // tslint:disable-next-line:ban-types
   jobs: Array<Object> = [];
   faClock = faClock;
   faMapMarker = faMapMarker;
   constructor(private jobService: UserJobsService) {
     this.jobService.listJobs().subscribe(r => {
+      // tslint:disable-next-line:no-string-literal
       this.jobs = r['payload']['jobs'];
       console.log(this.jobs);
-    })
+    });
   }
 
   ngOnInit() {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserProfileService } from '../services/user_profile.service';
+// tslint:disable-next-line:quotemark
 import Swal from "sweetalert2";
 
 @Component({
@@ -12,7 +13,9 @@ export class UserProfilePageComponent implements OnInit {
 
   constructor(private profileService: UserProfileService) {
     this.profileService.get().subscribe(res => {
+      // tslint:disable-next-line:no-string-literal
       if (res['status'] === 'success') {
+        // tslint:disable-next-line:no-string-literal
         this.profile = res['payload'];
       }
     });
@@ -41,6 +44,7 @@ export class UserProfilePageComponent implements OnInit {
       } else {
         // make request
         this.profileService.changePassword(pwd).subscribe(p => {
+          // tslint:disable-next-line:no-string-literal
           if (p['status'] === 'success') {
             Swal.fire({
               type: 'success',
@@ -51,6 +55,7 @@ export class UserProfilePageComponent implements OnInit {
             Swal.fire({
               type: 'error',
               title: 'Error!',
+              // tslint:disable-next-line:no-string-literal
               text: p['payload']['message'],
             });
           }
